@@ -16,6 +16,12 @@
 		B62D46E91D01EA4800C30D8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D46E71D01EA4800C30D8B /* LaunchScreen.storyboard */; };
 		B62D46F41D01EA4800C30D8B /* BederrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D46F31D01EA4800C30D8B /* BederrTests.m */; };
 		B62D46FF1D01EA4800C30D8B /* BederrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D46FE1D01EA4800C30D8B /* BederrUITests.m */; };
+		B62D47141D02237400C30D8B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D47131D02237400C30D8B /* SWRevealViewController.m */; };
+		B62D471D1D02237C00C30D8B /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D47171D02237C00C30D8B /* UIColor+Hex.m */; };
+		B62D47261D02288600C30D8B /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D47221D02288600C30D8B /* LeftMenuViewController.m */; };
+		B62D47271D02288600C30D8B /* OptionLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D47241D02288600C30D8B /* OptionLeftTableViewCell.m */; };
+		B62D47281D02288600C30D8B /* OptionLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */; };
+		B62D472C1D02291100C30D8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D472B1D02291100C30D8B /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,17 @@
 		B62D46FA1D01EA4800C30D8B /* BederrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BederrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D46FE1D01EA4800C30D8B /* BederrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BederrUITests.m; sourceTree = "<group>"; };
 		B62D47001D01EA4800C30D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B62D47121D02237400C30D8B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B62D47131D02237400C30D8B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B62D47161D02237C00C30D8B /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		B62D47171D02237C00C30D8B /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		B62D47211D02288600C30D8B /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		B62D47221D02288600C30D8B /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		B62D47231D02288600C30D8B /* OptionLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLeftTableViewCell.h; sourceTree = "<group>"; };
+		B62D47241D02288600C30D8B /* OptionLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionLeftTableViewCell.m; sourceTree = "<group>"; };
+		B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionLeftTableViewCell.xib; sourceTree = "<group>"; };
+		B62D472A1D02291100C30D8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		B62D472B1D02291100C30D8B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +120,7 @@
 		B62D46D51D01EA4800C30D8B /* Bederr */ = {
 			isa = PBXGroup;
 			children = (
+				B62D470C1D0221CC00C30D8B /* Source */,
 				B62D46D91D01EA4800C30D8B /* AppDelegate.h */,
 				B62D46DA1D01EA4800C30D8B /* AppDelegate.m */,
 				B62D46DC1D01EA4800C30D8B /* ViewController.h */,
@@ -141,6 +159,88 @@
 				B62D47001D01EA4800C30D8B /* Info.plist */,
 			);
 			path = BederrUITests;
+			sourceTree = "<group>";
+		};
+		B62D470C1D0221CC00C30D8B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B62D47151D02237C00C30D8B /* Categories */,
+				B62D470D1D0221CC00C30D8B /* Controllers */,
+				B62D470E1D0221CC00C30D8B /* Library */,
+				B62D470F1D0221CC00C30D8B /* Model */,
+				B62D47101D0221CC00C30D8B /* ViewControllers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B62D470D1D0221CC00C30D8B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B62D470E1D0221CC00C30D8B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B62D47111D02237400C30D8B /* SWRevealViewController */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B62D470F1D0221CC00C30D8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B62D47101D0221CC00C30D8B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B62D47291D0228FA00C30D8B /* HomeViewController */,
+				B62D47201D02288600C30D8B /* LeftMenuViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B62D47111D02237400C30D8B /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B62D47121D02237400C30D8B /* SWRevealViewController.h */,
+				B62D47131D02237400C30D8B /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		B62D47151D02237C00C30D8B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B62D47161D02237C00C30D8B /* UIColor+Hex.h */,
+				B62D47171D02237C00C30D8B /* UIColor+Hex.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B62D47201D02288600C30D8B /* LeftMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B62D47211D02288600C30D8B /* LeftMenuViewController.h */,
+				B62D47221D02288600C30D8B /* LeftMenuViewController.m */,
+				B62D47231D02288600C30D8B /* OptionLeftTableViewCell.h */,
+				B62D47241D02288600C30D8B /* OptionLeftTableViewCell.m */,
+				B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */,
+			);
+			path = LeftMenuViewController;
+			sourceTree = "<group>";
+		};
+		B62D47291D0228FA00C30D8B /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B62D472A1D02291100C30D8B /* HomeViewController.h */,
+				B62D472B1D02291100C30D8B /* HomeViewController.m */,
+			);
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +349,7 @@
 				B62D46E91D01EA4800C30D8B /* LaunchScreen.storyboard in Resources */,
 				B62D46E61D01EA4800C30D8B /* Assets.xcassets in Resources */,
 				B62D46E11D01EA4800C30D8B /* Main.storyboard in Resources */,
+				B62D47281D02288600C30D8B /* OptionLeftTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +375,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62D46DE1D01EA4800C30D8B /* ViewController.m in Sources */,
+				B62D471D1D02237C00C30D8B /* UIColor+Hex.m in Sources */,
 				B62D46DB1D01EA4800C30D8B /* AppDelegate.m in Sources */,
+				B62D47271D02288600C30D8B /* OptionLeftTableViewCell.m in Sources */,
+				B62D47141D02237400C30D8B /* SWRevealViewController.m in Sources */,
+				B62D472C1D02291100C30D8B /* HomeViewController.m in Sources */,
+				B62D47261D02288600C30D8B /* LeftMenuViewController.m in Sources */,
 				B62D46D81D01EA4800C30D8B /* main.m in Sources */,
 				B62D46E41D01EA4800C30D8B /* Bederr.xcdatamodeld in Sources */,
 			);
@@ -417,10 +523,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Bederr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bederr.Bederr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -428,10 +538,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Bederr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bederr.Bederr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -500,6 +614,7 @@
 				B62D47051D01EA4800C30D8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B62D47061D01EA4800C30D8B /* Build configuration list for PBXNativeTarget "BederrTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +623,7 @@
 				B62D47081D01EA4800C30D8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B62D47091D01EA4800C30D8B /* Build configuration list for PBXNativeTarget "BederrUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +632,7 @@
 				B62D470B1D01EA4800C30D8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

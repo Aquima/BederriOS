@@ -7,16 +7,39 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "HomeViewController.h"
+#import "LeftMenuViewController.h"
+#import "SWRevealViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<SWRevealViewControllerDelegate>
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    SWRevealViewController *revealController;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //Menu Left
+    LeftMenuViewController*leftMenuVC = [[LeftMenuViewController alloc] init];
+    [leftMenuVC setProportionalValue:[self getModel]];
+    
+    HomeViewController*homeVC = [[HomeViewController alloc] init];
+   // [homeVC setDelegate:self];
+    [homeVC setProportionalValue:[self getModel]];
+    UINavigationController*nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    nav.navigationBarHidden = true;
+   
+    revealController  = [[SWRevealViewController alloc] initWithRearViewController:leftMenuVC frontViewController:nav];
+
+    revealController.delegate = self;
+    revealController.rearViewRevealWidth = 201.5;
+    self.window.rootViewController = revealController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -122,6 +145,29 @@
             abort();
         }
     }
+}
+#pragma mark - Model Device
+-(NSNumber *)getModel {
+    float valueScreen = [ [ UIScreen mainScreen ] bounds ].size.height;
+    int integer = (int)valueScreen;
+    switch (integer) {
+        case 480:
+            return @0.845;//S
+            break;
+        case 568:
+            return @1;//5S
+            break;
+        case 667:
+            return @1.174;//6
+            break;
+        case 736:
+            return @1.295;//6Plus
+            break;
+        default:
+            return @1;//Facebook
+            break;
+    }
+    
 }
 
 @end

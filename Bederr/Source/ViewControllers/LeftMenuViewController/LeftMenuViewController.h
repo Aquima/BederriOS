@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LeftMenuViewController.h
 //  Bederr
 //
 //  Created by Raúl Samuel Quispe Mamani on 6/3/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LeftMenuViewController : UIViewController
 @property(nonatomic,strong)NSNumber*proportionalValue;
-
 @end
-

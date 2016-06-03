@@ -1,26 +1,41 @@
 //
-//  ViewController.m
+//  HomeViewController.m
 //  Bederr
 //
 //  Created by Raúl Samuel Quispe Mamani on 6/3/16.
 //  Copyright © 2016 Bederr S.A.C. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
+#import "SWRevealViewController.h"
 
-@interface ViewController ()
+@interface HomeViewController ()
 @property (nonatomic) UIDeviceOrientation currentDeviceOrientation;
 @end
 
-@implementation ViewController{
+@implementation HomeViewController{
     UIView*topView;
+    SWRevealViewController *revealController;
+    
 }
 @synthesize proportionalValue;
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    revealController = [self revealViewController];
+    
+    [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self getBody:[proportionalValue floatValue]];
+    //orientation Selection
+    UIDeviceOrientation currentOrientation = [[UIDevice currentDevice] orientation];
+    [self drawOrientation:currentOrientation];
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self getBody:[proportionalValue floatValue]];
+
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
     
@@ -48,10 +63,16 @@
         return;
     }
     
+    [self drawOrientation:currentOrientation];
+   
+    // Ignore changes in device orientation if unknown, face up, or face down.
     
+}
+
+-(void)drawOrientation:(UIDeviceOrientation)currentOrientation{
     BOOL isLandscape = UIDeviceOrientationIsLandscape(currentOrientation);
     BOOL isPortrait = UIDeviceOrientationIsPortrait(currentOrientation);
-
+    
     // Rotate your view, or other things here
     if (isLandscape) {
         NSLog(@"isLandscape");
@@ -61,11 +82,7 @@
         NSLog(@"isPortrait");
         [self drawPortrait:[proportionalValue floatValue]];
     }
-    // Ignore changes in device orientation if unknown, face up, or face down.
-  
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
