@@ -37,7 +37,7 @@
     revealController  = [[SWRevealViewController alloc] initWithRearViewController:leftMenuVC frontViewController:nav];
 
     revealController.delegate = self;
-    revealController.rearViewRevealWidth = 201.5;
+    revealController.rearViewRevealWidth = 201.5*[[self getModel] floatValue];
     self.window.rootViewController = revealController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -163,8 +163,14 @@
         case 736:
             return @1.295;//6Plus
             break;
+        case 1024:
+            return @0.9;//iPad
+            break;
+        case 1366:
+            return @1.2;//iPad Pro
+            break;
         default:
-            return @1;//Facebook
+            return @1;//iPad
             break;
     }
     

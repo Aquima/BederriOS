@@ -11,5 +11,5 @@
 @interface OptionLeftTableViewCell : UITableViewCell
 @property(nonatomic,strong)UILabel*optionTitle;
 -(void)loadWithData:(NSDictionary*)data;
--(void)loadTypeIcon:(NSDictionary*)data withType:(NSString*)type;
+-(void)loadTypeIcon:(UIView*)icon;
 @end

@@ -22,6 +22,13 @@
 		B62D47271D02288600C30D8B /* OptionLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D47241D02288600C30D8B /* OptionLeftTableViewCell.m */; };
 		B62D47281D02288600C30D8B /* OptionLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */; };
 		B62D472C1D02291100C30D8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D472B1D02291100C30D8B /* HomeViewController.m */; };
+		B6DA8C531D05E7D800EFDDD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6DA8C551D05E7D800EFDDD0 /* Localizable.strings */; };
+		B6DA8C641D06233B00EFDDD0 /* AskLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C591D06233B00EFDDD0 /* AskLogo.m */; };
+		B6DA8C651D06233B00EFDDD0 /* ExplorerLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C5B1D06233B00EFDDD0 /* ExplorerLogo.m */; };
+		B6DA8C661D06233B00EFDDD0 /* MenuLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C5D1D06233B00EFDDD0 /* MenuLogo.m */; };
+		B6DA8C671D06233B00EFDDD0 /* MyBenfitLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C5F1D06233B00EFDDD0 /* MyBenfitLogo.m */; };
+		B6DA8C681D06233B00EFDDD0 /* NotificationsLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C611D06233B00EFDDD0 /* NotificationsLogo.m */; };
+		B6DA8C691D06233B00EFDDD0 /* ProfileLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C631D06233B00EFDDD0 /* ProfileLogo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,20 @@
 		B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionLeftTableViewCell.xib; sourceTree = "<group>"; };
 		B62D472A1D02291100C30D8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B62D472B1D02291100C30D8B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B6DA8C541D05E7D800EFDDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6DA8C561D05E7DC00EFDDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6DA8C581D06233B00EFDDD0 /* AskLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskLogo.h; sourceTree = "<group>"; };
+		B6DA8C591D06233B00EFDDD0 /* AskLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskLogo.m; sourceTree = "<group>"; };
+		B6DA8C5A1D06233B00EFDDD0 /* ExplorerLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplorerLogo.h; sourceTree = "<group>"; };
+		B6DA8C5B1D06233B00EFDDD0 /* ExplorerLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplorerLogo.m; sourceTree = "<group>"; };
+		B6DA8C5C1D06233B00EFDDD0 /* MenuLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLogo.h; sourceTree = "<group>"; };
+		B6DA8C5D1D06233B00EFDDD0 /* MenuLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLogo.m; sourceTree = "<group>"; };
+		B6DA8C5E1D06233B00EFDDD0 /* MyBenfitLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBenfitLogo.h; sourceTree = "<group>"; };
+		B6DA8C5F1D06233B00EFDDD0 /* MyBenfitLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBenfitLogo.m; sourceTree = "<group>"; };
+		B6DA8C601D06233B00EFDDD0 /* NotificationsLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsLogo.h; sourceTree = "<group>"; };
+		B6DA8C611D06233B00EFDDD0 /* NotificationsLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsLogo.m; sourceTree = "<group>"; };
+		B6DA8C621D06233B00EFDDD0 /* ProfileLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileLogo.h; sourceTree = "<group>"; };
+		B6DA8C631D06233B00EFDDD0 /* ProfileLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileLogo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +141,7 @@
 		B62D46D51D01EA4800C30D8B /* Bederr */ = {
 			isa = PBXGroup;
 			children = (
+				B6DA8C501D05E74C00EFDDD0 /* Resource */,
 				B62D470C1D0221CC00C30D8B /* Source */,
 				B62D46D91D01EA4800C30D8B /* AppDelegate.h */,
 				B62D46DA1D01EA4800C30D8B /* AppDelegate.m */,
@@ -225,6 +247,7 @@
 		B62D47201D02288600C30D8B /* LeftMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B6DA8C571D06233B00EFDDD0 /* MenuIcons */,
 				B62D47211D02288600C30D8B /* LeftMenuViewController.h */,
 				B62D47221D02288600C30D8B /* LeftMenuViewController.m */,
 				B62D47231D02288600C30D8B /* OptionLeftTableViewCell.h */,
@@ -241,6 +264,33 @@
 				B62D472B1D02291100C30D8B /* HomeViewController.m */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		B6DA8C501D05E74C00EFDDD0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B6DA8C551D05E7D800EFDDD0 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B6DA8C571D06233B00EFDDD0 /* MenuIcons */ = {
+			isa = PBXGroup;
+			children = (
+				B6DA8C581D06233B00EFDDD0 /* AskLogo.h */,
+				B6DA8C591D06233B00EFDDD0 /* AskLogo.m */,
+				B6DA8C5A1D06233B00EFDDD0 /* ExplorerLogo.h */,
+				B6DA8C5B1D06233B00EFDDD0 /* ExplorerLogo.m */,
+				B6DA8C5C1D06233B00EFDDD0 /* MenuLogo.h */,
+				B6DA8C5D1D06233B00EFDDD0 /* MenuLogo.m */,
+				B6DA8C5E1D06233B00EFDDD0 /* MyBenfitLogo.h */,
+				B6DA8C5F1D06233B00EFDDD0 /* MyBenfitLogo.m */,
+				B6DA8C601D06233B00EFDDD0 /* NotificationsLogo.h */,
+				B6DA8C611D06233B00EFDDD0 /* NotificationsLogo.m */,
+				B6DA8C621D06233B00EFDDD0 /* ProfileLogo.h */,
+				B6DA8C631D06233B00EFDDD0 /* ProfileLogo.m */,
+			);
+			path = MenuIcons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +360,7 @@
 				TargetAttributes = {
 					B62D46D21D01EA4800C30D8B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3LBQX5KXG6;
 					};
 					B62D46EE1D01EA4800C30D8B = {
 						CreatedOnToolsVersion = 7.3;
@@ -346,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DA8C531D05E7D800EFDDD0 /* Localizable.strings in Resources */,
 				B62D46E91D01EA4800C30D8B /* LaunchScreen.storyboard in Resources */,
 				B62D46E61D01EA4800C30D8B /* Assets.xcassets in Resources */,
 				B62D46E11D01EA4800C30D8B /* Main.storyboard in Resources */,
@@ -375,14 +427,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62D46DE1D01EA4800C30D8B /* ViewController.m in Sources */,
+				B6DA8C681D06233B00EFDDD0 /* NotificationsLogo.m in Sources */,
 				B62D471D1D02237C00C30D8B /* UIColor+Hex.m in Sources */,
 				B62D46DB1D01EA4800C30D8B /* AppDelegate.m in Sources */,
 				B62D47271D02288600C30D8B /* OptionLeftTableViewCell.m in Sources */,
+				B6DA8C651D06233B00EFDDD0 /* ExplorerLogo.m in Sources */,
 				B62D47141D02237400C30D8B /* SWRevealViewController.m in Sources */,
 				B62D472C1D02291100C30D8B /* HomeViewController.m in Sources */,
+				B6DA8C641D06233B00EFDDD0 /* AskLogo.m in Sources */,
 				B62D47261D02288600C30D8B /* LeftMenuViewController.m in Sources */,
+				B6DA8C691D06233B00EFDDD0 /* ProfileLogo.m in Sources */,
 				B62D46D81D01EA4800C30D8B /* main.m in Sources */,
 				B62D46E41D01EA4800C30D8B /* Bederr.xcdatamodeld in Sources */,
+				B6DA8C671D06233B00EFDDD0 /* MyBenfitLogo.m in Sources */,
+				B6DA8C661D06233B00EFDDD0 /* MenuLogo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +490,15 @@
 				B62D46E81D01EA4800C30D8B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B6DA8C551D05E7D800EFDDD0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6DA8C541D05E7D800EFDDD0 /* en */,
+				B6DA8C561D05E7DC00EFDDD0 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -528,7 +595,7 @@
 				INFOPLIST_FILE = Bederr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bederr.Bederr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bederr.mundobeneficios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -543,7 +610,7 @@
 				INFOPLIST_FILE = Bederr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bederr.Bederr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bederr.mundobeneficios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

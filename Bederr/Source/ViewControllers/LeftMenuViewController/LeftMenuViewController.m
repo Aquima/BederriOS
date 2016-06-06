@@ -12,6 +12,12 @@
 #import "SWRevealViewController.h"
 #import "HomeViewController.h"
 
+#import "AskLogo.h"
+#import "ProfileLogo.h"
+#import "ExplorerLogo.h"
+#import "NotificationsLogo.h"
+#import "MyBenfitLogo.h"
+
 @interface LeftMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -22,81 +28,61 @@
     NSArray*listMenu;
     SWRevealViewController *revealController;
     NSInteger currentRow;
+
+    NSMutableArray*listIcons;
+    
 }
+@synthesize proportionalValue;
+
+NSString *const COLOR_STATE_NORMAL= @"15509d";
+NSString *const COLOR_STATE_SELECTED= @"FEFEFE";
+NSString *const COLOR_BACKGROUND= @"FEFEFE";
+//logoMenuLeft
 //and you.. you are.. you are my favorite
 - (void)viewDidLoad {
     [super viewDidLoad];
+    float valuePro=[proportionalValue floatValue];
     // Do any additional setup after loading the view.
     sizeView = self.view.frame.size;
     listMenu = [self optionForMenu];
     currentRow = 0;
-    UIImageView*imgTopHead = [[UIImageView alloc] init];
-    [imgTopHead setImage:[UIImage imageNamed:@"backgroundMenuTop"]];
-    imgTopHead.frame = CGRectMake(0,0, 201.5, 231.5);
-    [imgTopHead setBackgroundColor:[UIColor clearColor]];
-    [self.view addSubview:imgTopHead];
-    
-    UIImageView*imgProfile = [[UIImageView alloc] init];
-    [imgProfile setImage:[UIImage imageNamed:@"profile"]];
-    imgProfile.frame = CGRectMake(14,96.5, 66, 66);
-    [imgProfile setBackgroundColor:[UIColor clearColor]];
-    imgProfile.layer.cornerRadius = imgProfile.frame.size.width/2;
-    imgProfile.layer.masksToBounds = true;
-    imgProfile.layer.borderWidth = 1;
-    imgProfile.layer.borderColor = [UIColor whiteColor].CGColor;
-    [self.view addSubview:imgProfile];
-    
-    UILabel*lblTitleName = [[UILabel alloc] initWithFrame:CGRectMake(imgProfile.frame.origin.x+imgProfile.frame.size.width+5, imgProfile.frame.origin.y+15, sizeView.width-40, 24)];
-  //  [lblTitleName setText:[NSString  stringWithFormat:@"%@",[currentData objectForKey:@"name"]]];
-    [lblTitleName setText:@"ALEXANDER AGUSTIN \nRODRIGUEZ BANCHO"];
-    [lblTitleName setFont:[UIFont fontWithName:@"Helvetica-Light" size:10]];
-    [lblTitleName setTextColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
-    [lblTitleName setTextAlignment:NSTextAlignmentLeft];
-    [lblTitleName setLineBreakMode:NSLineBreakByWordWrapping];
-    [lblTitleName setNumberOfLines:2];
-    //  [lblTitleName setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:lblTitleName];
-    
-    UILabel*lblTitleDocument = [[UILabel alloc] initWithFrame:CGRectMake(imgProfile.frame.origin.x+imgProfile.frame.size.width+5, imgProfile.frame.origin.y+39, sizeView.width-40, 12)];
-  //  [lblTitleDocument setText:[NSString  stringWithFormat:@"DNI: %@",[currentData objectForKey:@"DNI"]]];
-    [lblTitleDocument setText:@"DNI: 34564322"];
-    [lblTitleDocument setFont:[UIFont fontWithName:@"Helvetica" size:9]];
-    [lblTitleDocument setTextColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
-    [lblTitleDocument setTextAlignment:NSTextAlignmentLeft];
-    [self.view addSubview:lblTitleDocument];
-    
-    UIImageView*imgLogo = [[UIImageView alloc] init];
-    [imgLogo setImage:[UIImage imageNamed:@"logoKalifikaDark"]];
-    imgLogo.frame = CGRectMake((imgTopHead.frame.size.width-113)/2,56, 113, 25);
-    [self.view addSubview:imgLogo];
- 
-    [self.view setBackgroundColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
-    
-    currentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 249,190, self.view.frame.size.height-249)];
+
+    currentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 127*valuePro, self.view.frame.size.width, self.view.frame.size.height-127*valuePro)];
     [self.view addSubview:currentTableView];
     currentTableView.separatorColor =[UIColor clearColor];
-    [currentTableView setBackgroundColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
+//[currentTableView setBackgroundColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
     
     [currentTableView setDelegate:self];
     [currentTableView setDataSource:self];
-    //this  code is for select first cell
+    
+    UIImageView*imgLogoLeft = [[UIImageView alloc] init];
+    imgLogoLeft.frame = CGRectMake(0, 0, 236*valuePro, 127*valuePro);
+    [self.view addSubview:imgLogoLeft];
+    [imgLogoLeft setImage:[UIImage imageNamed:@"logoMenuLeft"]];
+    
+    [self createListIcons];
+    
+//This  code is for select first cell
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [currentTableView selectRowAtIndexPath:indexPath animated:true  scrollPosition:UITableViewScrollPositionTop];
     OptionLeftTableViewCell *lc = (OptionLeftTableViewCell*)[currentTableView cellForRowAtIndexPath:indexPath];
-    [lc.optionTitle setTextColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
-    [lc loadTypeIcon:(NSDictionary*)[listMenu objectAtIndex:indexPath.row] withType:@"Off"];
+    [lc.optionTitle setTextColor:[UIColor colorFromHexString:COLOR_STATE_SELECTED withAlpha:1]];
+    [lc loadTypeIcon:[listIcons objectAtIndex:indexPath.row*2+1]];
+
+//BackgroundColor
+    
+    [currentTableView setBackgroundColor:[UIColor colorFromHexString:COLOR_BACKGROUND withAlpha:1]];
+    [self.view setBackgroundColor:[UIColor colorFromHexString:COLOR_BACKGROUND withAlpha:1]];
     
 }
 -(NSArray*)optionForMenu{
     
-    NSDictionary*item0 = @{@"title":@"Mi Score",@"icono":@"btnScore"};
-    NSDictionary*item1 = @{@"title":@"Solicitar Ofertas de \nCredito",@"icono":@"btnOffer"};
-    NSDictionary*item2 = @{@"title":@"Vender Deuda",@"icono":@"btnSoldOut"};
-    NSDictionary*item3 = @{@"title":@"Refinanciar Credito",@"icono":@"btnAgree"};
-    NSDictionary*item4 = @{@"title":@"Solicitar Tarjeta de \nCredito",@"icono":@"btnGetCard"};
-    NSDictionary*item5 = @{@"title":@"Cerrar Sesión",@"icono":@"btnLogOut"};
-    
-    NSArray*sendData = [[NSArray alloc] initWithObjects:item0,item1,item2,item3,item4,item5, nil];
+    NSDictionary*item0 = @{@"title":NSLocalizedString(@"Option_One", nil),@"icono":@"btnScore"};
+    NSDictionary*item1 = @{@"title":NSLocalizedString(@"Option_Two", nil),@"icono":@"btnOffer"};
+    NSDictionary*item2 = @{@"title":NSLocalizedString(@"Option_Three", nil),@"icono":@"btnSoldOut"};
+
+    NSArray*sendData = [[NSArray alloc] initWithObjects:item0,item1,item2, nil];
     
     return sendData;
     
@@ -142,10 +128,10 @@
     lc.separatorInset = UIEdgeInsetsMake(0.f, lc.bounds.size.width, 0.f, 0.f);
 
     UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorFromHexString:@"FEFEFE" withAlpha:1];
+    bgColorView.backgroundColor = [UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1];
     [lc setSelectedBackgroundView:bgColorView];
     [lc loadWithData:(NSDictionary*)[listMenu objectAtIndex:indexPath.row]];
-    [lc loadTypeIcon:(NSDictionary*)[listMenu objectAtIndex:indexPath.row] withType:@"On"];
+    [lc loadTypeIcon:[listIcons objectAtIndex:indexPath.row*2]];
     return lc;
  
 }
@@ -154,15 +140,15 @@
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
    
     OptionLeftTableViewCell *lc = (OptionLeftTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-    [lc.optionTitle setTextColor:[UIColor colorFromHexString:@"FEFEFE" withAlpha:1]];
-    [lc loadTypeIcon:(NSDictionary*)[listMenu objectAtIndex:indexPath.row] withType:@"On"];
+    [lc.optionTitle setTextColor:[UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1]];
+    [lc loadTypeIcon:[listIcons objectAtIndex:indexPath.row*2]];
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     OptionLeftTableViewCell *lc = (OptionLeftTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-    [lc.optionTitle setTextColor:[UIColor colorFromHexString:@"0374B6" withAlpha:1]];
-    [lc loadTypeIcon:(NSDictionary*)[listMenu objectAtIndex:indexPath.row] withType:@"Off"];
+    [lc.optionTitle setTextColor:[UIColor colorFromHexString:COLOR_STATE_SELECTED withAlpha:1]];
+    [lc loadTypeIcon:[listIcons objectAtIndex:indexPath.row*2+1]];
     
     revealController = [self revealViewController];
     if (currentRow==indexPath.row) {
@@ -206,7 +192,79 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 40;
+    return 50;
+    
+}
+#pragma mark - Logo
+-(void)createListIcons{
+    
+    listIcons = [[NSMutableArray alloc] init];
+    
+    AskLogo*logoAsk;
+    ProfileLogo*logoProfile;
+    NotificationsLogo*logoNotifications;
+    ExplorerLogo*logoExplorer;
+    MyBenfitLogo*logoBenefit;
+    
+    AskLogo*logoAskOn;
+    ProfileLogo*logoProfileOn;
+    NotificationsLogo*logoNotificationsOn;
+    ExplorerLogo*logoExplorerOn;
+    MyBenfitLogo*logoBenefitOn;
+    
+    float height=50;
+
+    logoBenefit = [[MyBenfitLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    [logoBenefit setBackgroundColor:[UIColor clearColor]];
+    [logoBenefit changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [listIcons addObject:logoBenefit];
+    
+    logoBenefitOn = [[MyBenfitLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    [logoBenefitOn setBackgroundColor:[UIColor clearColor]];
+    [logoBenefitOn changeColor:[UIColor whiteColor]];
+    [listIcons addObject:logoBenefitOn];
+    
+    logoProfile = [[ProfileLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    [logoProfile setBackgroundColor:[UIColor clearColor]];
+    [logoProfile changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [listIcons addObject:logoProfile];
+    
+    logoProfileOn = [[ProfileLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    [logoProfileOn setBackgroundColor:[UIColor clearColor]];
+    [logoProfileOn changeColor:[UIColor whiteColor]];
+    [listIcons addObject:logoProfileOn];
+    
+    logoNotifications = [[NotificationsLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    [logoNotifications setBackgroundColor:[UIColor clearColor]];
+    [logoNotifications changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [listIcons addObject:logoNotifications];
+    
+    logoNotificationsOn = [[NotificationsLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    [logoNotificationsOn setBackgroundColor:[UIColor clearColor]];
+    [logoNotificationsOn changeColor:[UIColor whiteColor]];
+    [listIcons addObject:logoNotificationsOn];
+
+    logoExplorer = [[ExplorerLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    [logoExplorer setBackgroundColor:[UIColor clearColor]];
+    [logoExplorer changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [listIcons addObject:logoExplorer];
+    
+    logoExplorerOn = [[ExplorerLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    [logoExplorerOn setBackgroundColor:[UIColor clearColor]];;
+    [logoExplorerOn changeColor:[UIColor whiteColor]];
+    [listIcons addObject:logoExplorerOn];
+    
+    logoAsk = [[AskLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    [logoAsk setBackgroundColor:[UIColor clearColor]];
+    [logoAsk changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [logoAsk setNeedsDisplay];
+    [listIcons addObject:logoAsk];
+    
+    logoAskOn = [[AskLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    [logoAskOn setBackgroundColor:[UIColor clearColor]];
+    [logoAskOn changeColor:[UIColor whiteColor]];
+    [logoAskOn setNeedsDisplay];
+    [listIcons addObject: logoAskOn];
     
 }
 @end
