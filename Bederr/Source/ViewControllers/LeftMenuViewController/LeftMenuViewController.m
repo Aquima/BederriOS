@@ -78,9 +78,9 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
 }
 -(NSArray*)optionForMenu{
     
-    NSDictionary*item0 = @{@"title":NSLocalizedString(@"Option_One", nil),@"icono":@"btnScore"};
-    NSDictionary*item1 = @{@"title":NSLocalizedString(@"Option_Two", nil),@"icono":@"btnOffer"};
-    NSDictionary*item2 = @{@"title":NSLocalizedString(@"Option_Three", nil),@"icono":@"btnSoldOut"};
+    NSDictionary*item0 = @{@"title":NSLocalizedString(@"Option_One", nil)};
+    NSDictionary*item1 = @{@"title":NSLocalizedString(@"Option_Two", nil)};
+    NSDictionary*item2 = @{@"title":NSLocalizedString(@"Option_Three", nil)};
 
     NSArray*sendData = [[NSArray alloc] initWithObjects:item0,item1,item2, nil];
     
@@ -118,12 +118,14 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     OptionLeftTableViewCell *lc = (OptionLeftTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"OptionLeftTableViewCell"];
+    
     if (lc == nil) {
         // Load the top-level objects from the custom cell XIB.
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"OptionLeftTableViewCell" owner:self options:nil];
         // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
         lc = [topLevelObjects objectAtIndex:0];
     }
+   [lc setProportionalValue:proportionalValue];
     [lc setBackgroundColor:[UIColor clearColor]];
     lc.separatorInset = UIEdgeInsetsMake(0.f, lc.bounds.size.width, 0.f, 0.f);
 
@@ -132,6 +134,7 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
     [lc setSelectedBackgroundView:bgColorView];
     [lc loadWithData:(NSDictionary*)[listMenu objectAtIndex:indexPath.row]];
     [lc loadTypeIcon:[listIcons objectAtIndex:indexPath.row*2]];
+    
     return lc;
  
 }
@@ -192,7 +195,7 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 50;
+    return 50*[proportionalValue floatValue];
     
 }
 #pragma mark - Logo
@@ -212,55 +215,55 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
     ExplorerLogo*logoExplorerOn;
     MyBenfitLogo*logoBenefitOn;
     
-    float height=50;
+    float height=50*[proportionalValue floatValue];
 
-    logoBenefit = [[MyBenfitLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    logoBenefit = [[MyBenfitLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoBenefit setBackgroundColor:[UIColor clearColor]];
-    [logoBenefit changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [logoBenefit changeColor:[UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1]];
     [listIcons addObject:logoBenefit];
     
-    logoBenefitOn = [[MyBenfitLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    logoBenefitOn = [[MyBenfitLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoBenefitOn setBackgroundColor:[UIColor clearColor]];
     [logoBenefitOn changeColor:[UIColor whiteColor]];
     [listIcons addObject:logoBenefitOn];
     
-    logoProfile = [[ProfileLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    logoProfile = [[ProfileLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoProfile setBackgroundColor:[UIColor clearColor]];
-    [logoProfile changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [logoProfile changeColor:[UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1]];
     [listIcons addObject:logoProfile];
     
-    logoProfileOn = [[ProfileLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    logoProfileOn = [[ProfileLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoProfileOn setBackgroundColor:[UIColor clearColor]];
     [logoProfileOn changeColor:[UIColor whiteColor]];
     [listIcons addObject:logoProfileOn];
     
-    logoNotifications = [[NotificationsLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    logoNotifications = [[NotificationsLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoNotifications setBackgroundColor:[UIColor clearColor]];
-    [logoNotifications changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [logoNotifications changeColor:[UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1]];
     [listIcons addObject:logoNotifications];
     
-    logoNotificationsOn = [[NotificationsLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    logoNotificationsOn = [[NotificationsLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoNotificationsOn setBackgroundColor:[UIColor clearColor]];
     [logoNotificationsOn changeColor:[UIColor whiteColor]];
     [listIcons addObject:logoNotificationsOn];
 
-    logoExplorer = [[ExplorerLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    logoExplorer = [[ExplorerLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoExplorer setBackgroundColor:[UIColor clearColor]];
-    [logoExplorer changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [logoExplorer changeColor:[UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1]];
     [listIcons addObject:logoExplorer];
     
-    logoExplorerOn = [[ExplorerLogo alloc] initWithFrame:CGRectMake(20,(height-34)/2, 34, 34)];
+    logoExplorerOn = [[ExplorerLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoExplorerOn setBackgroundColor:[UIColor clearColor]];;
     [logoExplorerOn changeColor:[UIColor whiteColor]];
     [listIcons addObject:logoExplorerOn];
     
-    logoAsk = [[AskLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    logoAsk = [[AskLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoAsk setBackgroundColor:[UIColor clearColor]];
-    [logoAsk changeColor:[UIColor colorFromHexString:@"15509d" withAlpha:1]];
+    [logoAsk changeColor:[UIColor colorFromHexString:COLOR_STATE_NORMAL withAlpha:1]];
     [logoAsk setNeedsDisplay];
     [listIcons addObject:logoAsk];
     
-    logoAskOn = [[AskLogo alloc] initWithFrame:CGRectMake(20, (height-34)/2, 34, 34)];
+    logoAskOn = [[AskLogo alloc] initWithFrame:CGRectMake(20*[proportionalValue floatValue],(height-34*[proportionalValue floatValue])/2, 34*[proportionalValue floatValue], 34*[proportionalValue floatValue])];
     [logoAskOn setBackgroundColor:[UIColor clearColor]];
     [logoAskOn changeColor:[UIColor whiteColor]];
     [logoAskOn setNeedsDisplay];

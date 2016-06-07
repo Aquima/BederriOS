@@ -15,24 +15,17 @@
     UIImageView*imgIcono;
     UIView*currentIcon;
 }
-@synthesize optionTitle;
-NSString *const COLOR_STATE_NORMAL_CELL= @"0374B6";
+@synthesize optionTitle,proportionalValue;
+NSString *const COLOR_STATE_NORMAL_CELL= @"15509d";
 //NSString *const COLOR_BACKGROUND= @"FEFEFE";
 - (void)awakeFromNib {
     [super awakeFromNib];
     //Initialization code
-    width=[ [ UIScreen mainScreen ] bounds ].size.width-10;
-    height = 52;
-    
-    optionTitle=[[UILabel alloc] initWithFrame:CGRectMake(64, 0, width-80, height)];
-    [optionTitle setFont:[UIFont fontWithName:@"Helvetica-Light" size:15]];
+    optionTitle=[[UILabel alloc] initWithFrame:CGRectMake(64*[proportionalValue floatValue], 0, width-80, height)];
     [optionTitle setTextColor: [UIColor colorFromHexString:COLOR_STATE_NORMAL_CELL withAlpha:1]];
     [optionTitle setLineBreakMode:NSLineBreakByWordWrapping];
     [optionTitle setNumberOfLines:2];
     [self addSubview:optionTitle];
-    
-    imgIcono = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, 40, 40)];
-    [self addSubview:imgIcono];
     
 }
 
@@ -41,12 +34,15 @@ NSString *const COLOR_STATE_NORMAL_CELL= @"0374B6";
     // Configure the view for the selected state
 }
 -(void)loadWithData:(NSDictionary*)data{
+    width=[ [ UIScreen mainScreen ] bounds ].size.width-10*[proportionalValue floatValue];
+    height = 52*[proportionalValue floatValue];
+    optionTitle.frame = CGRectMake(64*[proportionalValue floatValue], 0, width-80, height);
+    [optionTitle setFont:[UIFont fontWithName:@"Helvetica" size:17*[proportionalValue floatValue]]];
     [optionTitle setText:[data objectForKey:@"title"]];
-   
 }
 -(void)loadTypeIcon:(UIView*)icon{
-    //[imgIcono setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@%@",[data objectForKey:@"icono"],type]]];
     currentIcon = icon;
     [self addSubview:currentIcon];
+    
 }
 @end

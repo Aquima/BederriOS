@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OptionLeftTableViewCell : UITableViewCell
+@property(nonatomic,strong)NSNumber*proportionalValue;
 @property(nonatomic,strong)UILabel*optionTitle;
 -(void)loadWithData:(NSDictionary*)data;
 -(void)loadTypeIcon:(UIView*)icon;
