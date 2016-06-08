@@ -37,12 +37,11 @@
 NSString *const COLOR_STATE_NORMAL= @"15509d";
 NSString *const COLOR_STATE_SELECTED= @"FEFEFE";
 NSString *const COLOR_BACKGROUND= @"FEFEFE";
-//logoMenuLeft
-//and you.. you are.. you are my favorite
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    float valuePro=[proportionalValue floatValue];
     // Do any additional setup after loading the view.
+    float valuePro=[proportionalValue floatValue];
     sizeView = self.view.frame.size;
     listMenu = [self optionForMenu];
     currentRow = 0;
@@ -66,6 +65,7 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [currentTableView selectRowAtIndexPath:indexPath animated:true  scrollPosition:UITableViewScrollPositionTop];
+    currentTableView.scrollEnabled = false;
     OptionLeftTableViewCell *lc = (OptionLeftTableViewCell*)[currentTableView cellForRowAtIndexPath:indexPath];
     [lc.optionTitle setTextColor:[UIColor colorFromHexString:COLOR_STATE_SELECTED withAlpha:1]];
     [lc loadTypeIcon:[listIcons objectAtIndex:indexPath.row*2+1]];
@@ -103,7 +103,7 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
 */
 #pragma mark - UIViewController
 - (BOOL)prefersStatusBarHidden {
-    return true;
+    return false;
 }
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
@@ -162,6 +162,7 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
         
         UINavigationController*nav;
         HomeViewController*homeScoreVC = [[HomeViewController alloc] init];
+        [homeScoreVC setProportionalValue:proportionalValue];
         nav = [[UINavigationController alloc] initWithRootViewController:homeScoreVC];
         nav.navigationBarHidden = true;
         [revealController pushFrontViewController:nav animated:YES];
@@ -270,4 +271,5 @@ NSString *const COLOR_BACKGROUND= @"FEFEFE";
     [listIcons addObject: logoAskOn];
     
 }
+
 @end

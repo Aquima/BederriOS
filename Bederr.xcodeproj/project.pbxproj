@@ -22,6 +22,10 @@
 		B62D47271D02288600C30D8B /* OptionLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D47241D02288600C30D8B /* OptionLeftTableViewCell.m */; };
 		B62D47281D02288600C30D8B /* OptionLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */; };
 		B62D472C1D02291100C30D8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62D472B1D02291100C30D8B /* HomeViewController.m */; };
+		B665BEBE1D086E2500F8DE88 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B665BEBD1D086E2500F8DE88 /* IntroViewController.m */; };
+		B665BEC11D08746500F8DE88 /* CoreDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B665BEC01D08746500F8DE88 /* CoreDataTool.m */; };
+		B665BEC71D087FBD00F8DE88 /* UserEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B665BEC41D087FBD00F8DE88 /* UserEntity+CoreDataProperties.m */; };
+		B665BEC81D087FBD00F8DE88 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B665BEC61D087FBD00F8DE88 /* UserEntity.m */; };
 		B6DA8C531D05E7D800EFDDD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6DA8C551D05E7D800EFDDD0 /* Localizable.strings */; };
 		B6DA8C641D06233B00EFDDD0 /* AskLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C591D06233B00EFDDD0 /* AskLogo.m */; };
 		B6DA8C651D06233B00EFDDD0 /* ExplorerLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DA8C5B1D06233B00EFDDD0 /* ExplorerLogo.m */; };
@@ -77,6 +81,14 @@
 		B62D47251D02288600C30D8B /* OptionLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionLeftTableViewCell.xib; sourceTree = "<group>"; };
 		B62D472A1D02291100C30D8B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B62D472B1D02291100C30D8B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B665BEBC1D086E2500F8DE88 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		B665BEBD1D086E2500F8DE88 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		B665BEBF1D08746500F8DE88 /* CoreDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTool.h; sourceTree = "<group>"; };
+		B665BEC01D08746500F8DE88 /* CoreDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTool.m; sourceTree = "<group>"; };
+		B665BEC31D087FBD00F8DE88 /* UserEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B665BEC41D087FBD00F8DE88 /* UserEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B665BEC51D087FBD00F8DE88 /* UserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEntity.h; sourceTree = "<group>"; };
+		B665BEC61D087FBD00F8DE88 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
 		B6DA8C541D05E7D800EFDDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6DA8C561D05E7DC00EFDDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6DA8C581D06233B00EFDDD0 /* AskLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskLogo.h; sourceTree = "<group>"; };
@@ -213,6 +225,9 @@
 		B62D470F1D0221CC00C30D8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B665BEC21D087FBD00F8DE88 /* EntityCoreData */,
+				B665BEBF1D08746500F8DE88 /* CoreDataTool.h */,
+				B665BEC01D08746500F8DE88 /* CoreDataTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +235,7 @@
 		B62D47101D0221CC00C30D8B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B665BEBB1D086E1C00F8DE88 /* IntroViewControllers */,
 				B62D47291D0228FA00C30D8B /* HomeViewController */,
 				B62D47201D02288600C30D8B /* LeftMenuViewController */,
 			);
@@ -264,6 +280,26 @@
 				B62D472B1D02291100C30D8B /* HomeViewController.m */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		B665BEBB1D086E1C00F8DE88 /* IntroViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B665BEBC1D086E2500F8DE88 /* IntroViewController.h */,
+				B665BEBD1D086E2500F8DE88 /* IntroViewController.m */,
+			);
+			path = IntroViewControllers;
+			sourceTree = "<group>";
+		};
+		B665BEC21D087FBD00F8DE88 /* EntityCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B665BEC31D087FBD00F8DE88 /* UserEntity+CoreDataProperties.h */,
+				B665BEC41D087FBD00F8DE88 /* UserEntity+CoreDataProperties.m */,
+				B665BEC51D087FBD00F8DE88 /* UserEntity.h */,
+				B665BEC61D087FBD00F8DE88 /* UserEntity.m */,
+			);
+			path = EntityCoreData;
 			sourceTree = "<group>";
 		};
 		B6DA8C501D05E74C00EFDDD0 /* Resource */ = {
@@ -426,17 +462,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B665BEC11D08746500F8DE88 /* CoreDataTool.m in Sources */,
 				B62D46DE1D01EA4800C30D8B /* ViewController.m in Sources */,
 				B6DA8C681D06233B00EFDDD0 /* NotificationsLogo.m in Sources */,
 				B62D471D1D02237C00C30D8B /* UIColor+Hex.m in Sources */,
 				B62D46DB1D01EA4800C30D8B /* AppDelegate.m in Sources */,
 				B62D47271D02288600C30D8B /* OptionLeftTableViewCell.m in Sources */,
 				B6DA8C651D06233B00EFDDD0 /* ExplorerLogo.m in Sources */,
+				B665BEC81D087FBD00F8DE88 /* UserEntity.m in Sources */,
 				B62D47141D02237400C30D8B /* SWRevealViewController.m in Sources */,
 				B62D472C1D02291100C30D8B /* HomeViewController.m in Sources */,
+				B665BEC71D087FBD00F8DE88 /* UserEntity+CoreDataProperties.m in Sources */,
 				B6DA8C641D06233B00EFDDD0 /* AskLogo.m in Sources */,
 				B62D47261D02288600C30D8B /* LeftMenuViewController.m in Sources */,
 				B6DA8C691D06233B00EFDDD0 /* ProfileLogo.m in Sources */,
+				B665BEBE1D086E2500F8DE88 /* IntroViewController.m in Sources */,
 				B62D46D81D01EA4800C30D8B /* main.m in Sources */,
 				B62D46E41D01EA4800C30D8B /* Bederr.xcdatamodeld in Sources */,
 				B6DA8C671D06233B00EFDDD0 /* MyBenfitLogo.m in Sources */,
